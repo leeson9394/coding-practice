@@ -1,5 +1,11 @@
 import urllib
 import urllib2
+import httplib
+
+conn = httplib.HTTPSConnection("www.python.org") #define connection 
+conn.request("GET","/")  #Send GET request
+res = conn.getresponse()  #Get reponse
+print res.status, res.reason #print status code
 
 url= 'http://www.google.com'
 
