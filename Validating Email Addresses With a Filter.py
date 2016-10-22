@@ -6,7 +6,7 @@ import re
 
 n=int(raw_input())
 l=[]
-notgood=[]
+
 for i in range(n):
     tmp=raw_input()
     if re.match(r"(^[a-zA-Z0-9_-]+@[a-zA-Z0-9]+\.[a-zA-Z]{1,3})+$",tmp) != None :
