@@ -1,3 +1,3 @@
-# Python-practice
+# Code exercise 
 
-Practice code in python
+
