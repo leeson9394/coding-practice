@@ -1,19 +1,24 @@
 # 56. Merge Intervals
 #https://leetcode.com/problems/merge-intervals/discuss/
 
+# Definition for an interval.
+# class Interval(object):
+#     def __init__(self, s=0, e=0):
+#         self.start = s
+#         self.end = e
+
 class Solution(object):
     def merge(self, intervals):
         """
         :type intervals: List[Interval]
         :rtype: List[Interval]
         """
-        res = [intervals[0]]
-
+        res = []
         for element in intervals:
-            if res[-1][0] <= element[0] <= res[-1][1]:
-                res[-1][1] = max(element[1], res[-1][1])
-            else:
+            if len(res) == 0 or res[-1].end < element.start:
                 res.append(element)
+            else:
+                res[-1].end = max(res[-1].end, element.end)
         return res
 
 
