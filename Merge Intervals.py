@@ -14,6 +14,7 @@ class Solution(object):
         :rtype: List[Interval]
         """
         res = []
+        intervals = sorted(intervals, key=lambda x: x.start) #sort intervals base on start element of each interval
         for element in intervals:
             if len(res) == 0 or res[-1].end < element.start:
                 res.append(element)
