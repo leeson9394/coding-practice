@@ -1,3 +1,4 @@
-# Code exercise 
+# Code exercise. Mostly from Leetcode. 
+
 
 
