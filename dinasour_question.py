@@ -26,3 +26,52 @@
 # Deinonychus,1.21,bipedal
 # Struthiomimus,1.34,bipedal
 # Velociraptor,2.72,bipedal
+
+import csv
+import json
+import math
+
+def read_csv(filePathDinoInfo, filePathAddInfo):
+    bipedalDinosaurs = {}
+    speed = {}
+    g=9.8
+    # with open(filePathAddInfo, "r") as csv_file2:
+    #     csvReader2 = csv.DictReader(csv_file2)
+    #     for rows in csvReader2:
+    #         if rows['STANCE'] == 'bipedal':
+    #             bipedalDinosaurs[rows['NAME']] = rows['STRIDE_LENGTH'] 
+    # with open(filePathDinoInfo, "r") as csv_file1:
+    #     csvReader1 = csv.DictReader(csv_file1)
+    #     for rows in csvReader1:
+    #         if rows['NAME'] in bipedalDinosaurs.keys(): 
+    #             speed[rows['NAME']] = ((float(bipedalDinosaurs[rows['NAME']])/float(rows['LEG_LENGTH']))-1)*math.sqrt(float(rows['LEG_LENGTH'])*g)
+    #     print(speed)
+
+    with open(filePathAddInfo, 'r') as f:
+        line = f.readline()
+        print(line)
+        while line:
+            line = f.readline().strip()
+            print(line)
+            # if line:
+            #     NAME, STRIDE_LENGTH, STANCE = line.split(',')
+            #     if STANCE == "bipedal":
+            #         bipedalDinosaurs[NAME] = float(STRIDE_LENGTH)
+    
+    # with open(filePathDinoInfo, 'r') as f:
+    #     line = f.readline()
+    #     while line:
+    #         line = f.readline().strip()
+    #         if line:
+    #             NAME, LEG_LENGTH, DIET = line.split(',')
+    #             if NAME in bipedalDinosaurs:
+    #                 STRIDE_LENGTH, LEG_LENGTH = bipedalDinosaurs[NAME], float(LEG_LENGTH)
+    #                 bipedalDinosaurs[NAME] = ((STRIDE_LENGTH / LEG_LENGTH) - 1) * math.sqrt(LEG_LENGTH * g)
+
+    # print(bipedalDinosaurs)      
+
+
+# read_csv("dataset1.csv")
+read_csv("dataset1.csv", "dataset2.csv")
+            
+                
