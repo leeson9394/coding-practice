@@ -1,4 +1,4 @@
-# Code exercise. Mostly from Leetcode. 
+# My code practice from interview question and leetcode
 
 
 
