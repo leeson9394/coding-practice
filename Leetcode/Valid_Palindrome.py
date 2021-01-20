@@ -1,29 +1,32 @@
-# 125. Valid Palindrome
-# https://leetcode.com/problems/valid-palindrome/?tab=Description
-
 class Solution(object):
     def isPalindrome(self, s):
         """
         :type s: str
         :rtype: bool
         """
-        valids = []
-        for character in s:
-            if character.isalpha() or character.isdigit():
-                valids.append(character)
-        word=''.join(valids)
-        print word
-        # for i in xrange(len(word)/2):
-        #     if word[i] != word[-1*(i+1)]:
+        # Filter the string and put character into list
+        valid = []
+        for char in s:
+            if char.isalpha() or char.isdigit():
+                valid.append(char.lower())
+
+        left = 0
+        right = len(valid) - 1
+
+        while left < right:
+            if valid[left] != valid[right]:
+                return False
+            left += 1
+            right -= 1
+        return True
+        
+        # traverse with for loop
+        # for i in xrange(len(valid)/2):
+        #     if valid[i] != valid[-1*(i+1)]:
         #         return False
         # return True
-        start=0
-        end=len(word)-1
-        while start < end:
-            if word[start].lower() != word[end].lower():
-                return False
-            start+=1
-            end-=1
-        return True
-a=Solution()
-print a.isPalindrome("A man, a plan, a canal: Panama")
+
+string = "A man, a plan, a canal: Panama"
+solution = Solution()
+result = solution.isPalindrome(string)
+print(bool(result))
