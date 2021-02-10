@@ -45,9 +45,16 @@ def print_bipedal_dinosaurs_order_by_speed(filePathDinoInfo, filePathAddInfo):
             if rows['NAME'] in bipedalDinosaurs.keys(): 
                 speed[rows['NAME']] = ((float(bipedalDinosaurs[rows['NAME']])/float(rows['LEG_LENGTH']))-1)*math.sqrt(float(rows['LEG_LENGTH'])*g)
 
-    print({k: v for k, v in sorted(speed.items(), key=lambda item: item[1], reverse=True)})
-    
-print_bipedal_dinosaurs_order_by_speed("dataset1.csv", "dataset2.csv")
+# option 1, sort the dict with lambda function
+    res = sorted( speed.items(), key = lambda x: -x[1] )
+    for item in res:
+        print(item[0])
+# option 2, store dict to tuple pair and sort by value
+    # speed_view = [ (v,k) for k,v in speed.items() ]
+    # speed_view.sort(reverse=True)
+    # for v,k in speed_view:
+    #     print(k)
+print_bipedal_dinosaurs_order_by_speed("Facebook/dataset1.csv", "Facebook/dataset2.csv")
 
 # Answer from online
 # import math

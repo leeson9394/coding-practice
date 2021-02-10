@@ -34,4 +34,4 @@ class Solution(object):
 a=Solution()
 nums=[15,7,11,2,3,5,4]
 target=9
-a.twoSum(nums,target)
+print(a.twoSum(nums,target))
