@@ -13,5 +13,43 @@ class Solution(object):
         nums=sorted(nums)
         return nums[len(nums)-k]
 
-a=Solution()
-print a.findKthLargest([3,2,1,5,6,4], 2)
+# sort 1 bubble
+# class Solution(object):
+#     def findKthLargest(self, nums, k):
+#         """
+#         :type nums: List[int]
+#         :type k: int
+#         :rtype: int
+#         """
+#         for i in range(0, len(nums)-1):
+#             for j in range(i+1, len(nums)):
+#                 if nums[j] > nums[i] : 
+#                     nums[j], nums[i] = nums[i], nums[j]
+
+#         return nums[k-1] if k <= len(nums) else -1
+
+# sort 2 insert sort
+# class Solution(object):
+#     def findKthLargest(self, nums, k):
+#         """
+#         :type nums: List[int]
+#         :type k: int
+#         :rtype: int
+#         """
+#         n = len(nums)
+#         if n <= 1:
+#             return nums[0]
+#         for i in range (1, n):
+#             target = nums[i]
+#             while i > 0 and target > nums[i-1]:
+#                 nums[i] = nums[i-1]
+#                 i = i-1
+#             nums[i] = target
+#         return nums[k-1] if k <= len(nums) else -1
+
+
+
+
+sol = Solution()
+res = sol.findKthLargest([3,2,1,5,6,4], 2)
+print(res)
