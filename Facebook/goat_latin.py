@@ -21,21 +21,24 @@
 
 # would return: 'Imaa peaksmaaa oatGmaaaa atinLmaaaaa'
 
-def goat_latin(words):
-    words_list = words.split(" ")
+def goat_latin(original_sentence):
+
     vowels = ['a', 'e', 'i', 'o', 'u']
     word_count = 0
-    res = ""
-    for word in words_list:
+    coverted_sentence = ""
+
+    words_list = original_sentence.split(" ") # split sentence into word by space
+
+    for word in words_list: 
         # print(word)
         word_count += 1
-        characters = list(word)
+        characters = list(word)             # split word into character list
         # print(characters[0])
         if characters[0].lower() in vowels: # if first letter is vowel, add ma to the end
             # print("found vowel")
             characters.append("m")
             characters.append("a")
-        else:                               # if no vowel at first letter, move it to the end
+        else:                               # if no vowel at first letter, move it to last and add ma to the end
             first_letter = characters[0] 
             characters.pop(0)
             characters.append(first_letter)
@@ -49,9 +52,9 @@ def goat_latin(words):
         # print(word_count)    
         to_string = "".join(characters) # put character list back to word string
         # print(to_string)
-        res += to_string + " " # put all words back to a sentence
-    return res
+        coverted_sentence += to_string + " " # put all words back to a sentence
+    return coverted_sentence
 
-words = 'I speak Goat Latin'
-result = goat_latin(words)
+original_sentence = 'I speak Goat Latin'
+result = goat_latin(original_sentence)
 print(result)
