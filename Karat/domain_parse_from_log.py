@@ -18,6 +18,18 @@
 #
 # """
 
+# Python3 use urllib.request library
+
+# import urllib.request
+
+# filedata = urllib.request.urlopen('https://karat-production-base-public.s3-us-west-2.amazonaws.com/content/q082/referrers.txt')
+# data= filedata.readlines()
+# res = []
+# for url in data:
+#     url_list = str(url).split("/")
+#     res.append(url_list[2])
+# print(res)
+
 import urllib2
 
 filedata = urllib2.urlopen('https://karat-production-base-public.s3-us-west-2.amazonaws.com/content/q082/referrers.txt')
@@ -26,6 +38,7 @@ res = []
 for url in data:
     url_list = url.split("/")
     res.append(url_list[2])
+    print(url_list)
 # print(res)
 
 d = {}
