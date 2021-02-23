@@ -23,5 +23,6 @@ class Solution(object):
         return res
 
 nums = [-2,1,-3,4,-1,2,1,-5,4]
-a = Solution()
-a.maxSubArray(nums)
+sol = Solution()
+res = sol.maxSubArray(nums)
+print(res)
