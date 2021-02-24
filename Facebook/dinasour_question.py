@@ -31,6 +31,9 @@ import csv
 import math
 
 def print_bipedal_dinosaurs_order_by_speed(file1_path, file2_path):
+    bipedal_dino = {}
+    g=9.8
+    dino_speed = {}
     with open(file2_path, 'r') as csv2:
         csvReader2 = csv.DictReader(csv2)
         for row in csvReader2:
@@ -59,10 +62,6 @@ def print_bipedal_dinosaurs_order_by_speed(file1_path, file2_path):
 
 file1_path = "Facebook/dataset1.csv"
 file2_path = "Facebook/dataset2.csv"
-
-bipedal_dino = {}
-g=9.8
-dino_speed = {}
 print_bipedal_dinosaurs_order_by_speed(file1_path, file2_path)
 
 # Answer from online

@@ -25,7 +25,7 @@ def goat_latin(original_sentence):
 
     vowels = ['a', 'e', 'i', 'o', 'u']
     word_count = 0
-    coverted_sentence = ""
+    goat_latin_sentence = ""
 
     words_list = original_sentence.split(" ") # split sentence into word by space
 
@@ -50,10 +50,10 @@ def goat_latin(original_sentence):
 
         # print(characters)
         # print(word_count)    
-        to_string = "".join(characters) # put character list back to word string
+        goat_latin_word = "".join(characters) # put character list back to word string
         # print(to_string)
-        coverted_sentence += to_string + " " # put all words back to a sentence
-    return coverted_sentence
+        goat_latin_sentence += goat_latin_word + " " # put all words back to a sentence
+    return goat_latin_sentence
 
 original_sentence = 'I speak Goat Latin'
 result = goat_latin(original_sentence)
