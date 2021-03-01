@@ -1,4 +1,4 @@
-# # Leetcode 692
+# Leetcode 692
 import collections
 
 # solution 1 from me, not working on alphabet orders.
