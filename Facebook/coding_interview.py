@@ -36,26 +36,28 @@ def count_words(file, num):
         print(article)
         
         for line in article:
-            words = article.split(" ")
+            words = line.split(" ")
 
             
         counter = 0
         
         res = {}
-        for word.lowercase() in words:
-            if word in res.keys():
-                res[word] += 1
+        for word in words:
+            filtered_word = re.sub('[^A-Za-z0-9]+', '', word).lower() # filter all special character and lowercase
+            # print(filtered_word)
+            if filtered_word in res.keys():
+                res[filtered_word] += 1
             else:
-                res[word] = 1
-                
+                res[filtered_word] = 1
                 
         # res = ("and": 5067 ,"the":8320....... )
         
         sorted_result = sorted(res.items(), key = lambda x : -x[1])
+        # print(sorted_result)
         for i in range(num):
-            print(sorted_result[0], sorted_result[1])
+            print(sorted_result[i][0], sorted_result[i][1])
             
-    
+count_words("Facebook/count_words.txt", 10)
     
 # Consider a square grid of size grid_size, where grid_size>=3. I have placed a battleship of
 # size 3 somewhere in the grid, and you want to sink my battleship by ordering
@@ -83,20 +85,20 @@ def count_words(file, num):
 # . . . . . . . .
 
 
-def find_battleship(grid_size, ship_length):
-    row = grid_size
-    col = grid_size
-    for i in range(0,row):
-        for j in range(0,col):
-            if bomb_location(i,j) = True:
-                result.append([i,j])
+# def find_battleship(grid_size, ship_length):
+#     row = grid_size
+#     col = grid_size
+#     for i in range(0,row):
+#         for j in range(0,col):
+#             if bomb_location(i,j) = True:
+#                 result.append([i,j])
             
             
         
     
-    direction = ((-1,0), (1,0), (0,1), (0, -1))
+#     direction = ((-1,0), (1,0), (0,1), (0, -1))
     
     
     
     
-    return result
+#     return result
