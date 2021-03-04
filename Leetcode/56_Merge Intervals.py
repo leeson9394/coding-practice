@@ -1,6 +1,33 @@
 # 56. Merge Intervals
-#https://leetcode.com/problems/merge-intervals/discuss/
+# https://leetcode.com/problems/merge-intervals
 
+class Solution(object):
+    def merge(self, intervals):
+        """
+        :type intervals: List[List[int]]
+        :rtype: List[List[int]]
+        """
+        sorted_arr = sorted(intervals, key = lambda x: x[0]) # sort intervals
+        res = [sorted_arr[0]] # put first interval into res
+
+        for i in range(1, len(sorted_arr)):     # parse intervals from second interval
+            if res[-1][1] >= sorted_arr[i][0]:  
+                start = min(res[-1][0],sorted_arr[i][0])
+                end = max(res[-1][1],sorted_arr[i][1])
+                res[-1][0] = start
+                res[-1][1] = end
+            else:
+                res.append(sorted_arr[i])
+        return res
+
+arr = [[2,6],[1,3],[8,10],[15,18]]
+# arr = [[1,4],[0,2],[3,5]]
+
+solu=Solution()
+res = solu.merge(arr)
+print(res)
+
+# Answer from online
 # class Interval(object):
 #     def __init__(self, s=0, e=0):
 #         self.start = s
@@ -34,34 +61,3 @@
 # solu=Solution()
 # intervals = [Interval(1, 3), Interval(2, 6), Interval(8, 10), Interval(15, 18)]
 # print([[e.start, e.end] for e in solu.merge(intervals)])
-
-class Solution(object):
-
-    def merge(self, intervals):
-        sorted_arr = sorted(intervals)
-        res = []
-        for i in range(0, len(sorted_arr)):
-            if sorted_arr[i][1] > sorted_arr[i+1][0]:
-                start = min(sorted_arr[i][0],sorted_arr[i+1][0])
-                end = max(sorted_arr[i][1],sorted_arr[i+1][1])
-                sorted_arr.pop(i)
-                sorted_arr.pop(i+1)
-                sorted_arr.insert(i,[start,end])
-            res.append(sorted_arr[i])
-        return res
-                
-    
-        
-
-
-
-arr = [[1,3],[2,5],[8,10],[15,18]]
-solu=Solution()
-print(solu.merge(arr))
-
-# a=[2,8]
-# b=[2,6]
-
-# start = min((a[0],b[0]))
-# end = max(a[1],b[1])
-# print([start, end])
