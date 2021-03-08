@@ -1,5 +1,5 @@
-#15. 3Sum
-#https://leetcode.com/problems/3sum/
+# leetcode 15. 3Sum
+# https://leetcode.com/problems/3sum/
 
 class Solution(object):
     def threeSum(self, nums):
@@ -11,10 +11,10 @@ class Solution(object):
         nums.sort()
         result=[]
         # print nums
-        for i in xrange(0,len(nums)):
+        for i in range(0,len(nums)):
             target= 0 - nums[i]
             kv = {}
-            for j in xrange(i+1,len(nums)):
+            for j in range(i+1,len(nums)):
                 if  target - nums[j] in kv:
                     tmp_result=([nums[i], target - nums[j], nums[j]])
                     if tmp_result not in result:
@@ -25,10 +25,11 @@ class Solution(object):
 
 
 
-a=Solution()
+sol=Solution()
 nums=[-1, 0, 1, 2, -1, -4]
 target=0
-print a.threeSum(nums)
+res=sol.threeSum(nums)
+print(res)
 
 
 
