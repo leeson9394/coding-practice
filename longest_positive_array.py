@@ -23,16 +23,16 @@ def positive_array(arr):
     pos=[]
     res=[]
     max_length = 0
-    for index in xrange(len(arr)):
+    for index in range(len(arr)):
         if arr[index] > 0:
             pos.append(arr[index])
         if arr[index] <= 0 or index == len(arr) - 1: # append if last item positive
             res.append(pos)
             pos=[]
-    print res
+    # print(res)
 
 
-    for index in xrange(len(res)-1):
+    for index in range(len(res)-1):
         if max_length < len(res[index]):
             max_length = len(res[index])
             max_index = index
@@ -40,4 +40,4 @@ def positive_array(arr):
 
 # list=[-1, 2, 3, -4, 6, 12, 8, 9, -3, -5, 0, -3, 7 ]
 list=[-1, 2, 3, -4, 6, 12, 8, -9, -3, 5, 0, 3, 7 ]
-print positive_array(list)
+print(positive_array(list))
