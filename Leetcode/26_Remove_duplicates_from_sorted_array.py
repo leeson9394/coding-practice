@@ -1,14 +1,18 @@
-class Solution(object):
-    def removeDuplicates(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
-        res = []
-        nums_set = set(nums)
-        for item in nums_set:
-            res.append(item)
-        return len(res), res
+from typing import List
+
+class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        i = 0
+        j = 0
+        while j < len(nums):
+            if i == 0 or nums[j] != nums[i-1] :
+                nums[i] = nums[j]
+                i += 1
+                j += 1
+            else:
+                j += 1
+        return i
+
 
 arr = [1,1,1,2,3,4,4,4,5]
 sol = Solution()

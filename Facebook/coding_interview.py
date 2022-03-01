@@ -102,3 +102,43 @@ count_words("Facebook/count_words.txt", 10)
     
     
 #     return result
+
+class Solution:
+    def bomb_location(self, i, j):
+        target_i = [1,2,3]
+        target_j = [2]
+        if i in target_i and j in target_j:
+            return True
+        else:
+            return False
+
+
+    def find_battleship(self, grid_size):
+        row = grid_size
+        col = grid_size
+        visited = False
+        ship_coordinates = []
+        for i in range(0, row):
+            for j in range(0, col):
+                bomb_if_hits = self.bomb_location(i,j)
+                if bomb_if_hits == True:
+                    self.dfs(i, j, grid_size, bomb_if_hits, visited, ship_coordinates)
+        return ship_coordinates
+
+    def dfs(self, i, j, grid_size, bomb_if_hits, visited, ship_coordinates):
+        if i < 0 or i > grid_size or j < 0 or j > grid_size or bomb_if_hits == False:
+            return
+        visited = True
+        ship_coordinates.append((i,j))
+        if visited == False:
+            self.dfs(i + 1, j, grid_size, bomb_if_hits, visited, ship_coordinates)
+            self.dfs(i - 1, j, grid_size, bomb_if_hits, visited, ship_coordinates)
+            self.dfs(i, j + 1, grid_size, bomb_if_hits, visited, ship_coordinates)
+            self.dfs(i, j - 1, grid_size, bomb_if_hits, visited, ship_coordinates)
+
+s = Solution()
+result = s.find_battleship(8)
+print(result)
+
+    
+

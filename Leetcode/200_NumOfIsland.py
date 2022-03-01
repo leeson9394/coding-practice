@@ -1,7 +1,7 @@
 # 200. Number of Islands
 # https://leetcode.com/problems/number-of-islands/?tab=Solutions
 
-# DFS method
+# DFS method 1, flip visited node as ocean
 class Solution1:
     # @param {character[][]} grid
     # @return {integer}
@@ -34,8 +34,36 @@ class Solution1:
         if j - 1 >= 0 and grid[i][j - 1] == '1':
             self.dfs(i, j - 1, grid)
 
+# DFS method 2, use array to mark visited nodes
+class Solution2(object):
+    def numIslands(self, grid):
+        """
+        :type grid: List[List[str]]
+        :rtype: int
+        """
+        if not grid: return 0
+        r, c = len(grid), len(grid[0])
+        visited = [[False for _ in range(c)] for _ in range(r)]
+
+        count = 0
+        for i in range(r):
+            for j in range(c):
+                if not visited[i][j] and grid[i][j] == '1':
+                    self.dfs(i, j, visited)
+                    count += 1
+        return count
+
+    def dfs(self, i, j, visited):
+        if i < 0 or i >= len(grid) or j < 0 or j >= len(grid[0]) or grid[i][j] == '0' or visited[i][j]:
+            return
+        visited[i][j] = True
+        self.dfs(i + 1, j, visited)
+        self.dfs(i - 1, j, visited)
+        self.dfs(i, j + 1, visited)
+        self.dfs(i, j - 1, visited)
+
 # BFS method
-class Solution2:
+class Solution3:
     # @param {character[][]} grid
     # @return {integer}
     def numIslands(self, grid):
@@ -75,5 +103,15 @@ class Solution2:
         return res
 
 grid=[['0','0','0','1','0','0','0','0'],['0','0','1','1','1','0','0','1'],['0','0','0','1','1','0','1','0'],['0','0','1','1','1','0','0','0']]
-a=Solution1()
-print(a.numIslands(grid))
+
+s1=Solution2()
+print("Solution 1 results:")
+print(s1.numIslands(grid))
+
+s2=Solution2()
+print("Solution 2 results:")
+print(s2.numIslands(grid))
+
+s3=Solution3()
+print("Solution 3 results:")
+print(s3.numIslands(grid))
