@@ -22,7 +22,7 @@ class Solution(object):
         for i in range(index, len(nums)):
             self.dfs(nums, i + 1, res, path + [nums[i]])
             # print(path)
-
+        
 nums = [1, 2, 3]
 sol = Solution()
 res = sol.subsets(nums)
