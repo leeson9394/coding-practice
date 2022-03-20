@@ -1,0 +1,42 @@
+1 account - N devices
+
+data model for account 
+
+account id
+account type
+scope - read only, rw, w only,  
+group - developer , user, 
+device 
+
+
+data model for device
+device id
+account id 
+session/token 
+
+API Spec for lifecycle events:
+
+Http URI, VERB, Status Code, Request Body, Header
+
+
+1) Account Creation
+
+email
+password
+address
+credit card
+
+/accounts, GET 
+/accounts, PUT, 200,
+
+
+2) Device Provisioned
+
+
+
+3) Unlink Device
+
+
+
+4) Close Account
+/accounts/uid, DELETE, 
