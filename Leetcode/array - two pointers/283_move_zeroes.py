@@ -12,3 +12,8 @@ class Solution(object):
             if nums[j] != 0:
                 nums[i], nums[j] = nums[j], nums[i]
                 i += 1
+            print(nums)
+
+arr = [0,1,0,3,12]
+s = Solution()
+s.moveZeroes(arr)
