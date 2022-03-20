@@ -30,9 +30,9 @@
 #     res.append(url_list[2])
 # print(res)
 
-import urllib2
+import urllib.request
 
-filedata = urllib2.urlopen('https://karat-production-base-public.s3-us-west-2.amazonaws.com/content/q082/referrers.txt')
+filedata = urllib.request.urlopen('http://karat-production-base-public.s3-us-west-2.amazonaws.com/content/q082/referrers.txt')
 data= filedata.readlines()
 res = []
 for url in data:

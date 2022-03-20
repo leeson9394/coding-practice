@@ -58,3 +58,26 @@ def goat_latin(original_sentence):
 original_sentence = 'I speak Goat Latin'
 result = goat_latin(original_sentence)
 print(result)
+
+# one for loop only
+def goat_latin(original_sentence):
+
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    goat_latin_sentence = ""
+    word_cnt = 0
+    words = original_sentence.split(" ")
+
+    for word in words:
+        word_cnt += 1
+        if word[0].lower() in vowels: # if first character is vowel
+            goat_latin_sentence = goat_latin_sentence + word + "ma" + "a" * word_cnt + " "
+        else:
+            first_c  = word[0] # store first character
+            word = word[1:] # pop out first character
+            goat_latin_sentence = goat_latin_sentence + word + first_c + "ma" + "a" * word_cnt + " "
+
+    return goat_latin_sentence
+
+original_sentence = 'I speak Goat Latin'
+result = goat_latin(original_sentence)
+print(result)
