@@ -57,7 +57,7 @@ def count_words(file, num):
         for i in range(num):
             print(sorted_result[i][0], sorted_result[i][1])
             
-count_words("Facebook/count_words.txt", 10)
+count_words("Facebook/data/count_words.txt", 10)
     
 # Consider a square grid of size grid_size, where grid_size>=3. I have placed a battleship of
 # size 3 somewhere in the grid, and you want to sink my battleship by ordering

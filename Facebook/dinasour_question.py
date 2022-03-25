@@ -60,8 +60,8 @@ def print_bipedal_dinosaurs_order_by_speed(file1_path, file2_path):
         # for v,k in speed_view:
         #     print(k)
 
-file1_path = "Facebook/dataset1.csv"
-file2_path = "Facebook/dataset2.csv"
+file1_path = "Facebook/data/dataset1.csv"
+file2_path = "Facebook/data/dataset2.csv"
 print_bipedal_dinosaurs_order_by_speed(file1_path, file2_path)
 
 # Answer from online
