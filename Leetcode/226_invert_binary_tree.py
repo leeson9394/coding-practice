@@ -17,5 +17,6 @@ class Solution(object):
     def swap(self, node):
         if not node:
             return
-        node.left, node.right = self.swap(node.right), self.swap(node.left)
-        return node
+        node.left, node.right = node.right, node.left
+        self.swap(node.left)
+        self.swap(node.right)

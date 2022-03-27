@@ -1,4 +1,5 @@
-# Leetcode 692
+# 692. https://leetcode.com/problems/top-k-frequent-words/
+
 import collections
 
 # solution 1 from me, not working on alphabet orders.
@@ -15,7 +16,7 @@ class Solution(object):
                 hashmap[item] += 1
             else:
                 hashmap[item] = 1
-        
+                
         print("before sort:", hashmap.items())
         res = sorted( hashmap.items(), key = lambda x: (-x[1], x[0]) )
         print("after sort:", res)

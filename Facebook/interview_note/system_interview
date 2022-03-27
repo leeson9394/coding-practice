@@ -1,0 +1,54 @@
+# Welcome to Facebook!
+
+# This is just a simple shared plaintext pad, with no execution capabilities.
+
+# When you know what language you would like to use for your interview,
+# simply choose it from the dropdown in the top bar.
+
+# Enjoy your interview!
+
+
+# facebook.123.com slow request, debug
+
+# 1. dig/nslookup dns
+# 2. load balancer round robin weight rr
+# 3. app - reposnse time, load of hardware(cpu/memory usage), error rate 50%, 
+# 4. top - see process usage process state(Z, D, S)
+# 5. ZOMBIE - parent process is dead or not exist
+# 6. D - waiting i/o, kernel space, restart app
+# 7. S - standby, user space
+# 8. send interupt - KILL SIGKILL in system call
+# 9. strace - pid at system call level wait()
+
+# file descriptor - int
+# write(int fd,x,x,x) - 
+
+# /mnt/xxx.log
+# df -h 
+# mount drive_url /mnt
+
+# ping drive_url
+
+# iptables, port nfs, private or ip range , whitelist
+
+
+# user space -> kernel space
+
+# read()
+# fork() process
+# exec() 
+
+# context switch - cpu single core 
+
+# background vs foreground 
+
+# pid nginx/apache
+
+# sudo run program root
+
+# user1: run program user1 
+
+# ps -aux |grep program_name
+# pid 
+# kill 
+# service nginx stop

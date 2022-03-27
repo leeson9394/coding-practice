@@ -21,7 +21,7 @@ class Solution1:
 
     def dfs(self, i, j, grid):
         grid[i][j] = '0'
-
+        
         if i + 1 < len(grid) and grid[i + 1][j] == '1':
             self.dfs(i + 1, j, grid)
 
@@ -49,18 +49,18 @@ class Solution2(object):
         for i in range(r):
             for j in range(c):
                 if not visited[i][j] and grid[i][j] == '1':
-                    self.dfs(i, j, visited)
+                    self.dfs(i, j, visited, grid)
                     count += 1
         return count
 
-    def dfs(self, i, j, visited):
+    def dfs(self, i, j, visited, grid):
         if i < 0 or i >= len(grid) or j < 0 or j >= len(grid[0]) or grid[i][j] == '0' or visited[i][j]:
             return
         visited[i][j] = True
-        self.dfs(i + 1, j, visited)
-        self.dfs(i - 1, j, visited)
-        self.dfs(i, j + 1, visited)
-        self.dfs(i, j - 1, visited)
+        self.dfs(i + 1, j, visited, grid)
+        self.dfs(i - 1, j, visited, grid)
+        self.dfs(i, j + 1, visited, grid)
+        self.dfs(i, j - 1, visited, grid)
 
 # BFS method
 class Solution3:

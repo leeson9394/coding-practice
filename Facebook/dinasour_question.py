@@ -51,11 +51,20 @@ def print_bipedal_dinosaurs_order_by_speed(file1_path, file2_path):
         # print(dino_speed)
 
         # option 1, sort the dict with lambda function
-        res = sorted( dino_speed.items(), key = lambda x: -x[1] )
+        res = sorted( dino_speed.items(), key = lambda x: (-x[1], x[0]) )
         for item in res:
             print(item[0])
+
         # option 2, store dict to tuple pair and sort by value
         # speed_view = [ (v,k) for k,v in dino_speed.items() ]
+        # speed_view.sort(reverse=True)
+        # for v,k in speed_view:
+        #     print(k)
+
+        # or in detail lines
+        # speed_view = []
+        # for k,v in dino_speed.items():
+        #     speed_view.append((v,k))
         # speed_view.sort(reverse=True)
         # for v,k in speed_view:
         #     print(k)
