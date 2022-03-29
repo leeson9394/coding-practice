@@ -43,3 +43,7 @@ def findDuplicates(arr):
       res.append(arr[i])
     value_to_index[arr[i]] = i
   return res
+
+arr = [2,3,1,2,3]
+res = findDuplicates(arr)
+print(res)

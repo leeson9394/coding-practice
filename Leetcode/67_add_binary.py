@@ -16,13 +16,13 @@ class Solution(object):
             digitB = int(b[j]) if j >= 0 else 0
             sum = digitA + digitB + carry
             carry = 1 if sum >= 2 else 0
-            sum = sum - 2 if sum >= 2 else sum
+            sum = sum % 2
             res += str(sum)
             i -= 1
             j -= 1
         return res[::-1]
 
 s1 = Solution()
-a = "11"
-b = "1"
+a = "1010"
+b = "10111"
 print(s1.addBinary(a, b))

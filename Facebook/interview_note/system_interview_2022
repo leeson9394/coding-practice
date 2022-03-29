@@ -1,0 +1,100 @@
+Welcome to Meta!
+
+This is just a simple shared plaintext pad, with no execution capabilities.
+
+When you know what language you would like to use for your interview,
+simply choose it from the dropdown in the top bar.
+
+Enjoy your interview!
+
+Limiting Memory:
+
+A developer comes to you in need of advice. Their app has a recently begun running out of memory and occasionally sends hosts OOM (Out of Memory), killing other processes on the host and requiring a reboot to fix. The developer wants to prevent the host from going OOM because the downtime of a reboot is detrimental and would prefer if only the one bad process crashed & restarted.
+
+  docker container
+    - share main os
+    - linux namespace - separate volume
+    - cgroup - process, mem/cpu 1g/1vcpu
+    
+    
+  virtual mem vs physical mem
+  
+  - physical - RAM 
+  - virtual - OS 
+  
+  1G physical if need 4G virutal mem?
+  
+  - swap mem - use hd as secondary mem
+  - swap partition - 
+  - RAM 100times faster than hd
+  
+  user space vs kernel space
+    - mem lookup ? 
+    - process in user space
+    - kernel space - hardware control
+    - user space - systemcall to kernel space - hardware control
+    - process syscall - fork(), exec(), exit()
+    - file syscall - open(), 
+    - malloc()
+    
+    
+  process
+   - zombie - parent process have been killed
+   - uninterupted sleep - waiting I/O
+    - interupted sleep 
+    - running
+    
+  os 
+  - multi process
+  
+  cpu 
+  - single core, single thread
+  - one thing at a time
+  - cpu context switching
+  - FIFO, FILO, least used, weight 
+  - nice value
+  
+    
+  ----------
+  
+  C code user space
+  
+  char arr[50] = {1,2,3..}
+  
+  char x = arr[0]
+  
+  ----------------------------
+  
+  
+  
+  top, vmstat, iostat, ps
+  
+  
+  PID    COMMAND      %CPU  TIME     #TH    #WQ  #PORT MEM    PURG  CMPRS  PGRP  PPID  STATE    BOOSTS           %CPU_ME %CPU_OTHRS UID  FAULTS     COW      MSGSENT     MSGRECV     SYSBSD      SYSMACH    CSW        PAGEINS IDLEW     POWER
+847    iTerm2       39.0  48:54.99 11     8    342   379M-  128M+ 24M    847   1     sleeping *0[13894]        0.75500 1.27928    501  14832228+  4411     12293230+   5800728+    20463255+   29843456+  13596685+  16903   641013+   39.9
+  
+  
+  
+  
+  pid 847 - iTerm2 
+  
+  
+  [bash ~] vmstat 4
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+ 0  0 14568532 1155380   3252 33041784   27   28   477   355    0    0  5  4 90  0  0
+ 0  0 14568532 1170116   3252 33044460    0    0     0   527 8086 10901  1  1 99  0  0
+ 0  0 14568532 1160880   3252 33046896    0    0    73 24265 10525 13502  1  1 98  0  0
+ 3  0 14568532 1151584   3252 33048984    5    0     5    79 9938 12985  1  1 98  0  0
+  
+  mem leak - debug
+  
+  
+  go for application logs
+  
+  1. opentelemetry
+  2. strace in linux
+  
+  gdb 
+  
+  

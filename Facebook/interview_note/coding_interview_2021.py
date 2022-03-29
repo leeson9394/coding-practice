@@ -116,7 +116,7 @@ class Solution:
     def find_battleship(self, grid_size):
         row = grid_size
         col = grid_size
-        visited = False
+        visited = [[False for x in range(row)] for y in range(col)]
         ship_coordinates = []
         for i in range(0, row):
             for j in range(0, col):
@@ -128,9 +128,9 @@ class Solution:
     def dfs(self, i, j, grid_size, bomb_if_hits, visited, ship_coordinates):
         if i < 0 or i > grid_size or j < 0 or j > grid_size or bomb_if_hits == False:
             return
-        visited = True
+        visited[i][j] = True
         ship_coordinates.append((i,j))
-        if visited == False:
+        if visited[i][j] == False:
             self.dfs(i + 1, j, grid_size, bomb_if_hits, visited, ship_coordinates)
             self.dfs(i - 1, j, grid_size, bomb_if_hits, visited, ship_coordinates)
             self.dfs(i, j + 1, grid_size, bomb_if_hits, visited, ship_coordinates)
@@ -139,6 +139,3 @@ class Solution:
 s = Solution()
 result = s.find_battleship(8)
 print(result)
-
-    
-
