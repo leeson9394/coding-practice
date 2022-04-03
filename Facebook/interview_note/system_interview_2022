@@ -19,14 +19,14 @@ A developer comes to you in need of advice. Their app has a recently begun runni
     
   virtual mem vs physical mem
   
-  - physical - RAM 
-  - virtual - OS 
+    - physical - RAM 
+    - virtual - OS 
   
   1G physical if need 4G virutal mem?
   
-  - swap mem - use hd as secondary mem
-  - swap partition - 
-  - RAM 100times faster than hd
+    - swap mem - use hd as secondary mem
+    - swap partition - 
+    - RAM 100times faster than hd
   
   user space vs kernel space
     - mem lookup ? 
@@ -39,8 +39,8 @@ A developer comes to you in need of advice. Their app has a recently begun runni
     
     
   process
-   - zombie - parent process have been killed
-   - uninterupted sleep - waiting I/O
+    - zombie - parent process have been killed
+    - uninterupted sleep - waiting I/O
     - interupted sleep 
     - running
     
@@ -48,13 +48,18 @@ A developer comes to you in need of advice. Their app has a recently begun runni
   - multi process
   
   cpu 
-  - single core, single thread
-  - one thing at a time
-  - cpu context switching
-  - FIFO, FILO, least used, weight 
-  - nice value
+    - single core, single thread
+    - one thing at a time
+    - cpu context switching
+    - FIFO, FILO, least used, weight 
+    - nice value
   
-    
+  heap vs stack memory
+
+  garbage collection
+    - how it work
+    - java vs python(c complier)
+  
   ----------
   
   C code user space

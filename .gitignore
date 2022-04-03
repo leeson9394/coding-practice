@@ -146,3 +146,6 @@ dmypy.json
 
 # VS Code
 .vscode/
+
+# white board playground
+wb.py

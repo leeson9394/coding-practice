@@ -20,11 +20,18 @@ dm_cnt = {'baidu.com': 900, 'com': 1600, 'facebook.com': 200, 'weibo.com': 500, 
 
 # print(dm_cnt.get('com'))
 
-# res = []
+res = []
 # for v,k in dm_cnt.items():
 #     res.append((k,v))
 # res.sort(reverse=True)
 # print(res)
+
+for v,k in res:
+    print(k)
+
+# put tuple back to dict
+dict_back = dict((k,v) for v, k in res)
+print(dict_back)
 
 # for x in dm_cnt.keys():
 #     print(x)
