@@ -1,5 +1,5 @@
-#1. Two Sum
-#https://leetcode.com/problems/two-sum/
+# 1. Two Sum
+# https://leetcode.com/problems/two-sum/
 
 class Solution(object):
     def twoSum(self, nums, target):
@@ -13,6 +13,18 @@ class Solution(object):
             if target - nums[i] in kv:
                 return [kv[target - nums[i]], i]
             kv[nums[i]]=i
+
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        num_to_index = {}
+        for i in range(0, len(nums)):
+            num_to_index[nums[i]] = i
+            if target - nums[i] in num_to_index:
+                return [num_to_index[target - nums[i]], i]
 
 
 # class Solution:
@@ -32,6 +44,6 @@ class Solution(object):
 #             self.ListToHash(nums)
 
 a=Solution()
-nums=[15,7,11,2,3,5,4]
-target=9
+nums=[2,4,3]
+target=6
 print(a.twoSum(nums,target))

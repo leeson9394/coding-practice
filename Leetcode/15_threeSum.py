@@ -3,25 +3,22 @@
 
 class Solution(object):
     def threeSum(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: List[List[int]]
-        """
-
         nums.sort()
-        result=[]
-        # print nums
-        for i in range(0,len(nums)):
-            target= 0 - nums[i]
-            kv = {}
-            for j in range(i+1,len(nums)):
-                if  target - nums[j] in kv:
-                    tmp_result=([nums[i], target - nums[j], nums[j]])
-                    if tmp_result not in result:
-                        result.append(tmp_result)
-                kv[nums[j]] = j
-            # print kv
-        return result
+        print(nums)
+        res = []
+
+        for i in range(len(nums)):
+            target = 0 - nums[i]
+            num_to_index = {} # reset dict when target changed
+            for j in range(i + 1, len(nums)):
+                if target - nums[j] in num_to_index:
+                    res_candidate = ([ nums[i], target - nums[j], nums[j] ])
+                    if res_candidate not in res: # remove duplidate result
+                        res.append(res_candidate)
+
+                num_to_index[nums[j]] = j
+        
+        return res
 
 
 
