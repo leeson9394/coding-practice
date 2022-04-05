@@ -1,4 +1,4 @@
-# Leetcode 1492
+# Leetcode 1492. https://leetcode.com/problems/the-kth-factor-of-n/
 
 class Solution(object):
     def kthFactor(self, n, k):

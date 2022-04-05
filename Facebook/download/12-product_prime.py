@@ -1,4 +1,5 @@
 # print all possible products from a list of primes: product of two numbers, product of three number, etc.
+# https://sugarac.gitbooks.io/facebook-interview-handbook/content/subsets-ii/prime-product.html
 
 # import numpy as np
 

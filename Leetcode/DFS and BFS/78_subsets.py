@@ -22,7 +22,38 @@ class Solution(object):
         res.append(path)
         for i in range(index, len(nums)):
             self.dfs(nums, i + 1, res, path + [nums[i]])
+
+# backtracking
+# https://www.youtube.com/watch?v=REOH22Xwdkk
+
+subset = []
+res = []
+
+class Solution(object):
+    def subsets(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[List[int]]
+        """
+        self.dfs(0, nums)
+        return res
+    
+    def dfs(self, i, nums):
+        global subset
+        global res
+
+        if i >= len(nums): # base case
+            res.append(subset.copy())
+            return
         
+        # decision to include nums[i]
+        subset.append(nums[i])
+        self.dfs(i + 1, nums)
+
+        # decision NOT to include nums[i]
+        subset.pop()
+        self.dfs(i + 1, nums)
+
 nums = [1, 2, 3]
 sol = Solution()
 res = sol.subsets(nums)
