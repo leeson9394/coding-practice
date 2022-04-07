@@ -60,6 +60,19 @@ class Node:
             res.append(root.data)
         return res
 
+    def leafDelete(self, root):
+        if root == None:
+            return None
+        if root.left == None and root.right == None:
+            return None
+    
+        # Else recursively delete in left
+        # and right subtrees.
+        root.left = self.leafDelete(root.left)
+        root.right = self.leafDelete(root.right)
+    
+        return root
+
 root = Node(27)
 root.insert(14)
 root.insert(35)
@@ -68,6 +81,12 @@ root.insert(19)
 root.insert(31)
 root.insert(42)
 
+print(root.inorderTraversal(root))
+print(root.PreorderTraversal(root))
+print(root.PostorderTraversal(root))
+
+print("after delete all leaf node from binary search tree")
+root.leafDelete(root)
 print(root.inorderTraversal(root))
 print(root.PreorderTraversal(root))
 print(root.PostorderTraversal(root))

@@ -12,5 +12,5 @@ def fortune_line(file_path):
         lucky_line_num = random.randint(0, len(article) - 1)
         print(article[lucky_line_num])
         
-file_path = "Facebook/data/hamlet_review.txt"
+file_path = "Facebook/data/fortune.txt"
 fortune_line(file_path)
